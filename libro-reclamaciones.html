@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Libro de Reclamaciones Virtual de FABRINSUR GROUP S.R.L. conforme al Código de Protección y Defensa del Consumidor (Ley N.° 29571).">
+    <meta name="theme-color" content="#002596">
+    <title>Libro de Reclamaciones | Fabrinsur Group S.R.L.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a href="index.html" class="brand" aria-label="Fabrinsur Group, ir al inicio">
+                <img src="images/logo.jpg" alt="Fabrinsur Group — Fabricaciones Industriales del Sur">
+            </a>
+            <button class="nav-toggle" data-nav-toggle aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="menu" data-nav aria-label="Navegación principal">
+                <a class="nav__link" href="index.html">Inicio</a>
+                <a class="nav__link" href="nosotros.html">Nosotros</a>
+                <a class="nav__link" href="servicios.html">Servicios</a>
+                <a class="nav__link" href="trabajos.html">Trabajos</a>
+                <a class="nav__link" href="videos.html">Videos</a>
+                <a class="nav__link" href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+        <section class="page-head">
+            <div class="container page-head__inner">
+                <p class="breadcrumb"><a href="index.html">Inicio</a><span>/</span>Libro de Reclamaciones</p>
+                <h1>Libro de Reclamaciones</h1>
+                <p class="page-head__text">Conforme al artículo 150.° del Código de Protección y Defensa del Consumidor (Ley N.° 29571), ponemos a tu disposición nuestro Libro de Reclamaciones Virtual.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section__head">
+                    <p class="eyebrow">Datos del proveedor</p>
+                    <h2>Establecimiento</h2>
+                </div>
+
+                <dl class="spec-table" style="margin-bottom:44px">
+                    <div><dt>Razón social</dt><dd>FABRINSUR GROUP S.R.L.</dd></div>
+                    <div><dt>RUC</dt><dd>20606966823</dd></div>
+                    <div><dt>Domicilio</dt><dd>V Etapa, Zona D, Mz. 32 G, Lt. 6, Urb. Miguel Grau, Paucarpata — Arequipa</dd></div>
+                </dl>
+
+                <form class="claims-sheet" id="formReclamacion" novalidate>
+                    <p class="claims-sheet__meta">
+                        <span>Hoja N.° <strong id="numeroHoja">—</strong></span>
+                        <span>Fecha <strong id="fechaHoja">—</strong></span>
+                    </p>
+
+                    <fieldset class="claims-block">
+                        <legend><span class="claims-block__num">1</span> Identificación del consumidor reclamante</legend>
+
+                        <div class="form">
+                            <div class="field-row">
+                                <div class="field field--span2">
+                                    <label for="nombre">Nombres y apellidos <abbr title="obligatorio">*</abbr></label>
+                                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                                </div>
+                                <div class="field">
+                                    <label for="tipoDoc">Tipo de documento <abbr title="obligatorio">*</abbr></label>
+                                    <select id="tipoDoc" name="tipoDoc" required>
+                                        <option value="DNI">DNI</option>
+                                        <option value="CE">Carné de extranjería</option>
+                                        <option value="Pasaporte">Pasaporte</option>
+                                        <option value="RUC">RUC</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="numDoc">N.° de documento <abbr title="obligatorio">*</abbr></label>
+                                    <input type="text" id="numDoc" name="numDoc" inputmode="numeric" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="domicilio">Domicilio <abbr title="obligatorio">*</abbr></label>
+                                <input type="text" id="domicilio" name="domicilio" autocomplete="street-address" required>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="email">Correo electrónico <abbr title="obligatorio">*</abbr></label>
+                                    <input type="email" id="email" name="email" autocomplete="email" required>
+                                </div>
+                                <div class="field">
+                                    <label for="telefono">Teléfono <abbr title="obligatorio">*</abbr></label>
+                                    <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+                                </div>
+                            </div>
+
+                            <div class="check">
+                                <input type="checkbox" id="esMenor" name="esMenor">
+                                <label for="esMenor">El consumidor es menor de edad</label>
+                            </div>
+
+                            <div class="field" id="bloqueTutor" hidden>
+                                <label for="tutor">Nombres y apellidos del padre, madre o apoderado <abbr title="obligatorio">*</abbr></label>
+                                <input type="text" id="tutor" name="tutor">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="claims-block">
+                        <legend><span class="claims-block__num">2</span> Identificación del bien contratado</legend>
+
+                        <div class="form">
+                            <div class="choice" role="radiogroup" aria-labelledby="etiquetaBien">
+                                <span class="choice__label" id="etiquetaBien">Tipo de bien <abbr title="obligatorio">*</abbr></span>
+                                <label class="choice__option"><input type="radio" name="tipoBien" value="Producto"> Producto</label>
+                                <label class="choice__option"><input type="radio" name="tipoBien" value="Servicio"> Servicio</label>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="monto">Monto reclamado (S/)</label>
+                                    <input type="number" id="monto" name="monto" min="0" step="0.01" placeholder="Opcional">
+                                </div>
+                                <div class="field field--span2">
+                                    <label for="descripcionBien">Descripción del producto o servicio <abbr title="obligatorio">*</abbr></label>
+                                    <input type="text" id="descripcionBien" name="descripcionBien" required>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="claims-block">
+                        <legend><span class="claims-block__num">3</span> Detalle de la reclamación y pedido del consumidor</legend>
+
+                        <div class="form">
+                            <div class="choice" role="radiogroup" aria-labelledby="etiquetaTipo">
+                                <span class="choice__label" id="etiquetaTipo">Tipo de solicitud <abbr title="obligatorio">*</abbr></span>
+                                <label class="choice__option"><input type="radio" name="tipoSolicitud" value="Reclamo"> Reclamo</label>
+                                <label class="choice__option"><input type="radio" name="tipoSolicitud" value="Queja"> Queja</label>
+                            </div>
+
+                            <ul class="claims-definitions">
+                                <li><strong>Reclamo:</strong> disconformidad relacionada a los productos o servicios.</li>
+                                <li><strong>Queja:</strong> disconformidad no relacionada a los productos o servicios; o malestar o descontento respecto a la atención al público.</li>
+                            </ul>
+
+                            <div class="field">
+                                <label for="detalle">Detalle <abbr title="obligatorio">*</abbr></label>
+                                <textarea id="detalle" name="detalle" rows="5" required></textarea>
+                            </div>
+
+                            <div class="field">
+                                <label for="pedido">Pedido del consumidor <abbr title="obligatorio">*</abbr></label>
+                                <textarea id="pedido" name="pedido" rows="4" required></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="check">
+                        <input type="checkbox" id="aceptaDatos" name="aceptaDatos" required>
+                        <label for="aceptaDatos">Declaro que la información proporcionada es veraz y autorizo su tratamiento para atender esta reclamación, conforme a la Ley N.° 29733 de Protección de Datos Personales. <abbr title="obligatorio">*</abbr></label>
+                    </div>
+
+                    <button type="submit" class="btn btn--solid">Enviar reclamación</button>
+                    <p class="form-status" id="estadoReclamacion" role="status" aria-live="polite" style="margin-top:14px"></p>
+                </form>
+
+                <aside class="legal-notes">
+                    <h2>Información legal</h2>
+                    <ol>
+                        <li>El proveedor debe dar respuesta al reclamo en el plazo establecido por la normativa vigente, contado desde la presentación de esta hoja.</li>
+                        <li>La formulación del reclamo <strong>no impide</strong> acudir a otras vías de solución de controversias <strong>ni es requisito previo</strong> para interponer una denuncia ante el INDECOPI.</li>
+                        <li>El proveedor debe conservar esta hoja de reclamación por el plazo que establece el reglamento.</li>
+                        <li>Recibirás una copia de tu reclamación en el correo electrónico que registres.</li>
+                    </ol>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div class="footer-brand">
+                    <img src="images/logo.jpg" alt="Fabrinsur Group">
+                    <p>FABRINSUR GROUP S.R.L. — Fabricaciones Industriales del Sur. Mecanizado y fabricación de piezas para el sector industrial y minero.</p>
+                </div>
+                <div>
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="trabajos.html">Trabajos</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="politica.html">Política de calidad</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="tel:+51955720814">955 720 814</a></li>
+                        <li><a href="mailto:rody.cruz@fabrinsur.com">rody.cruz@fabrinsur.com</a></li>
+                        <li>V Etapa, Zona D, Mz. 32 G, Lt. 6<br>Urb. Miguel Grau, Paucarpata — Arequipa</li>
+                        <li>Facebook: Fabrinsur Group</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p>© <span data-year>2026</span> Fabrinsur Group S.R.L. · RUC 20606966823</p>
+                <p>Arequipa — Perú</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/validacion.js"></script>
+    <script src="js/libro-reclamaciones.js"></script>
+
+    <a href="libro-reclamaciones.html" class="claims-book-btn" title="Libro de Reclamaciones" aria-label="Libro de Reclamaciones">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+    </a>
+</body>
+</html>

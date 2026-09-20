@@ -1,0 +1,359 @@
+/* ==========================================================================
+   pages.css — estilos propios de cada página
+   ========================================================================== */
+
+/* --- Figura con pie técnico --- */
+.figure-technical { position: relative; }
+
+.figure-technical img {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.figure-technical figcaption {
+    margin-top: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--steel-400);
+}
+
+/* --- Llamada a la acción de cierre --- */
+.cta {
+    position: relative;
+    padding: clamp(54px, 7vw, 86px) 0;
+    background-color: var(--brand);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(110deg, transparent 30%, #000 100%);
+}
+
+.cta__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cta h2 { color: var(--white); max-width: 620px; }
+.cta p { margin-top: 12px; color: rgba(255, 255, 255, 0.8); max-width: 560px; }
+
+/* --- Servicios: bloque con imagen, alternando lados --- */
+.service {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 48px 0;
+    border-top: 1px solid var(--line);
+}
+
+.service:last-of-type { border-bottom: 1px solid var(--line); }
+
+/* En los pares la imagen pasa a la derecha */
+.service:nth-of-type(even) .service__media { order: 2; }
+
+.service__media { margin: 0; }
+
+.service__media img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background-color: var(--steel-100);
+}
+
+.service__num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.service__body h3 { margin-bottom: 14px; }
+
+.service__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    list-style: none;
+}
+
+.service__tags li {
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel-600);
+}
+
+@media (max-width: 760px) {
+    .service { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+    .service:nth-of-type(even) .service__media { order: 0; }
+}
+
+/* --- Contacto --- */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-copy p { margin-bottom: 16px; }
+
+.contact-channels { list-style: none; margin-top: 32px; }
+
+.contact-channels li {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+}
+
+.contact-channels li:last-child { border-bottom: 1px solid var(--line); }
+
+.contact-channels dt,
+.contact-channels .channel-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--steel-400);
+}
+
+.contact-channels .channel-value {
+    font-size: 1rem;
+    color: var(--ink);
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.contact-channels a:hover { color: var(--brand); }
+
+.contact-form-wrap {
+    padding: 38px 34px;
+    background-color: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.contact-form-wrap h2 { font-size: 1.4rem; margin-bottom: 8px; }
+
+.contact-form-wrap > p {
+    font-size: 0.92rem;
+    color: var(--steel-400);
+    margin-bottom: 26px;
+}
+
+@media (max-width: 960px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 44px; }
+}
+
+@media (max-width: 640px) {
+    .contact-channels li { grid-template-columns: 1fr; gap: 4px; }
+    .contact-form-wrap { padding: 26px 20px; }
+}
+
+/* --- Libro de reclamaciones --- */
+.claims-sheet {
+    padding: 38px 36px;
+    background-color: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.claims-sheet__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 32px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel-400);
+}
+
+.claims-sheet__meta strong { color: var(--brand); }
+
+.claims-block { border: none; margin-bottom: 38px; }
+
+.claims-block legend {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 24px;
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.claims-block__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--brand);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    flex-shrink: 0;
+}
+
+.claims-definitions {
+    list-style: none;
+    padding: 16px 18px;
+    margin-bottom: 22px;
+    background-color: var(--steel-50);
+    border: 1px solid var(--line);
+    font-size: 0.88rem;
+}
+
+.claims-definitions li { padding: 4px 0; }
+
+.legal-notes { margin-top: 40px; }
+
+.legal-notes h2 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 18px;
+}
+
+.legal-notes ol { padding-left: 20px; }
+
+.legal-notes li {
+    padding: 7px 0;
+    font-size: 0.9rem;
+}
+
+.legal-notes li::marker { color: var(--accent); font-family: var(--font-mono); }
+
+@media (max-width: 640px) {
+    .claims-sheet { padding: 26px 20px; }
+}
+
+/* --- Galería de trabajos --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.gallery__item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--white);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.gallery__item:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+.gallery__item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: var(--steel-100);
+}
+
+.gallery__item figcaption {
+    padding: 16px 18px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel-600);
+    border-top: 1px solid var(--line);
+}
+
+/* --- Videos --- */
+.video-card h3 { margin-top: 18px; font-size: 1.1rem; }
+
+.video-card__frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-card__frame:hover { border-color: var(--accent); }
+
+.video-card__thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--transition);
+}
+
+.video-card__frame:hover .video-card__thumb { opacity: 0.8; }
+
+.video-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 66px;
+    height: 46px;
+    border-radius: 6px;
+    background-color: rgba(13, 27, 42, 0.78);
+    pointer-events: none;
+    transition: background-color var(--transition);
+}
+
+.video-card__play::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    border-style: solid;
+    border-width: 9px 0 9px 15px;
+    border-color: transparent transparent transparent var(--white);
+}
+
+.video-card__frame:hover .video-card__play { background-color: var(--accent); }
+
+.video-card__frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.video-card__frame.is-playing { cursor: default; }
