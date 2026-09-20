@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/fabrinsu/public_html/fabrinsur-web/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R EJEMPLO $DEPLOYPATH
+    - /bin/cp *.html $DEPLOYPATH
